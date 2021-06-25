@@ -36,6 +36,8 @@ export const Item = styled.div`
     color: white;
     margin-bottom: 10px;
     max-width: 670px;
+    margin: auto;
+    width: 100%;
 
     &::first-of-type {
         margin-top: 3em;

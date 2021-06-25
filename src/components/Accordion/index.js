@@ -23,7 +23,7 @@ Accordion.Item = function AccordionItem({ children, ...restProps }) {
     const [toggleShow, setToggleShow] = useState(false);
     return (
         <ToggleContext.Provider value={{ toggleShow, setToggleShow }}>
-            <Item {...restProps}>{children}</Item>;
+            <Item {...restProps}>{children}</Item>
         </ToggleContext.Provider>
     );
 };

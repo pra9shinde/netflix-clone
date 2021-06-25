@@ -4,7 +4,7 @@ import { Inner, Container, Pane, Item, Title, SubTitle, Image } from './styles/J
 const Jumbotron = ({ direction = 'row', children, ...restProps }) => {
     return (
         <Item {...restProps}>
-            <Inner direction={direction}>{children}</Inner>;
+            <Inner direction={direction}>{children}</Inner>
         </Item>
     );
 };
