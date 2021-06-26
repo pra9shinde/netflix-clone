@@ -13,6 +13,7 @@ export const Inner = styled.div`
 
     @media (max-width: 600px) {
         max-width: 400px;
+        padding: 70px 20px;
     }
 `;
 
