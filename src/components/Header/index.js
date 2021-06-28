@@ -18,6 +18,10 @@ Header.Logo = function HeaderLogo({ to, ...restProps }) {
     );
 };
 
-Header.ButtonLink = function HeaderButtonLink({ children, restProps }) {
-    return <ButtonLink {...restProps}>{children}</ButtonLink>;
+Header.ButtonLink = function HeaderButtonLink({ to, children, restProps }) {
+    return (
+        <ButtonLink to={to} {...restProps}>
+            {children}
+        </ButtonLink>
+    );
 };
