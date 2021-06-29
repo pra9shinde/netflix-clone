@@ -4,7 +4,7 @@ import { Link as ReachRouterLink } from 'react-router-dom';
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    min-height: 660px;
+    min-height: 500px;
     background-color: rgba(0, 0, 0, 0.75);
     border-radius: 5px;
     width: 100%;
@@ -14,7 +14,7 @@ export const Container = styled.div`
     margin-bottom: 100px;
 `;
 
-export const Error = styled.div`
+export const Error = styled.p`
     background: #e87c03;
     border-radius: 4px;
     font-size: 14px;
@@ -68,6 +68,7 @@ export const Input = styled.input`
     line-height: 50px;
     padding: 5px 20px;
     margin-bottom: 20px;
+    outline: 0;
 
     &:last-of-type {
         margin-bottom: 30px;

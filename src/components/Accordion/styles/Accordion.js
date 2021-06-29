@@ -49,7 +49,7 @@ export const Header = styled.div`
     justify-content: space-between;
     cursor: pointer;
     margin-bottom: 2px;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: normal;
     background: #303030;
     padding: 0.8em 1.2em;
@@ -58,14 +58,14 @@ export const Header = styled.div`
 
     img {
         filter: brightness(0) invert(1);
-        width: 24px;
+        width: 14px;
     }
 
     @media (max-width: 600px) {
         font-size: 16px;
 
         img {
-            width: 16px;
+            width: 12px;
         }
     }
 `;
