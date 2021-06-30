@@ -1,11 +1,15 @@
 import React from 'react';
+import useContent from '../hooks/useContent';
+import selectionMap from '../helper/selectionMap';
+import BrowseContainer from '../containers/Browse';
 
 const Browse = () => {
-    return (
-        <div>
-            <h1>Browse</h1>
-        </div>
-    );
+    const { series } = useContent('series');
+    const { films } = useContent('films');
+
+    const slides = selectionMap({ series, films });
+
+    return <BrowseContainer slides={slides} />;
 };
 
 export default Browse;
