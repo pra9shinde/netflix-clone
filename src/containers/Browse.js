@@ -3,11 +3,14 @@ import ProfilesContainer from './Profiles';
 import { FirebaseContext } from '../context/firebase';
 import Loading from '../components/Loading';
 import Header from '../components/Header';
+import Card from '../components/Card';
 
 const BrowseContainer = ({ slides }) => {
     const { firebase } = useContext(FirebaseContext);
     const user = firebase.auth().currentUser || {};
 
+    const [category, setCategory] = useState('series');
+    const [slideRows, setSlideRows] = useState([]);
     const [profile, setProfile] = useState({});
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
@@ -23,6 +26,11 @@ const BrowseContainer = ({ slides }) => {
         };
     }, [profile.displayName]);
 
+    useEffect(() => {
+        setSlideRows(slides[category])
+       
+    }, [slides, category])
+
     return (
         <>
             {profile.displayName ? (
@@ -32,8 +40,8 @@ const BrowseContainer = ({ slides }) => {
                         <Header.Frame>
                             <Header.Group>
                                 <Header.Logo to='/' alt='Shindeflix' src='/images/shindeflix-logo.png' />
-                                <Header.TextLink>Series</Header.TextLink>
-                                <Header.TextLink>Films</Header.TextLink>
+                                <Header.TextLink active={category === 'series' ? 'true' : 'false'}onClick={() => setCategory('series')}>Series</Header.TextLink>
+                                <Header.TextLink active={category === 'films' ? 'true' : 'false'}onClick={() => setCategory('films')}>Films</Header.TextLink>
                             </Header.Group>
                             <Header.Group>
                                 <Header.Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
@@ -61,6 +69,14 @@ const BrowseContainer = ({ slides }) => {
                             <Header.PlayButton>Play</Header.PlayButton>
                         </Header.Feature>
                     </Header>
+                
+                    <Card.Group>
+                        {slideRows.map((slideItem) => (
+                            <Card key={`${category}-${slideItem.title.toLowerCase()}`}>
+                                <Card.Title>{slideItem.title}</Card.Title>
+                            </Card>
+                        ))}
+                    </Card.Group>
                 </>
             ) : (
                 <ProfilesContainer user={user} setProfile={setProfile} />
