@@ -5,6 +5,7 @@ import Loading from '../components/Loading';
 import Header from '../components/Header';
 import Card from '../components/Card';
 import FooterContainer from '../containers/Footer';
+import Player from '../components/Player';
 
 const BrowseContainer = ({ slides }) => {
     const { firebase } = useContext(FirebaseContext);
@@ -91,7 +92,10 @@ const BrowseContainer = ({ slides }) => {
                                 </Card.Entities>
 
                                 <Card.Feature category={category}>
-                                    <p>Hello</p>
+                                    <Player>
+                                        <Player.Button />
+                                        <Player.Video src='/videos/bunny.mp4' />
+                                    </Player>
                                 </Card.Feature>
                             </Card>
                         ))}
