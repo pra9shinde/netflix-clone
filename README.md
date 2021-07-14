@@ -6,7 +6,10 @@ Welcome to ShindeFlix
 
 
 
-https://user-images.githubusercontent.com/46496160/125558883-c1093a0a-450c-471d-91f6-8c4b29824c27.mp4
+
+
+https://user-images.githubusercontent.com/46496160/125559180-6bee06b1-214c-4423-bc08-a7242eac997f.mp4
+
 
 
 
