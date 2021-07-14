@@ -5,7 +5,7 @@
 Welcome to ShindeFlix
 
 
-### _Checkout live demo [ShindeFlix](https://shindeflix.web.app)_
+### _Check the live demo [ShindeFlix](https://shindeflix.web.app)_
 
 
 https://user-images.githubusercontent.com/46496160/125559180-6bee06b1-214c-4423-bc08-a7242eac997f.mp4
