@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
+import Fuse from 'fuse.js';
 import ProfilesContainer from './Profiles';
 import { FirebaseContext } from '../context/firebase';
 import Loading from '../components/Loading';
@@ -31,6 +32,17 @@ const BrowseContainer = ({ slides }) => {
     useEffect(() => {
         setSlideRows(slides[category]);
     }, [slides, category]);
+
+    useEffect(() => {
+        const fuse = new Fuse(slideRows, { keys: ['data.description', 'data.title', 'data.genre'] });
+        const result = fuse.search(searchTerm).map(({ item }) => item);
+        if (slideRows.length > 0 && searchTerm.length > 3 && result.length > 0) {
+            setSlideRows(result);
+        } else {
+            setSlideRows(slides[category]);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [searchTerm]);
 
     return (
         <>
