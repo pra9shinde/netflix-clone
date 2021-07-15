@@ -13,6 +13,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 50px;
+    position: relative;
 
     > ${Title} {
         @media (max-width: 1000px) {
@@ -61,6 +62,11 @@ export const Text = styled.p`
 export const Entities = styled.div`
     display: flex;
     flex-direction: row;
+
+    @media (max-width: 500px) {
+        overflow-x: scroll;
+        width: 90%;
+    }
 `;
 
 export const Meta = styled.div`
@@ -101,6 +107,10 @@ export const Item = styled.div`
         }
     }
 
+    @media (max-width: 500px) {
+        min-width: 44%;
+    }
+
     &:first-of-type {
         margin-left: 56px;
 
@@ -114,6 +124,10 @@ export const Item = styled.div`
 
         @media (max-width: 1000px) {
             margin-right: 30px;
+        }
+
+        @media (max-width: 500px) {
+            margin-right: 0px;
         }
     }
 `;

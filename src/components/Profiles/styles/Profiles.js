@@ -15,6 +15,14 @@ export const Title = styled.h1`
     font-size: 48px;
     text-align: center;
     font-weight: 500;
+
+    @media (max-width: 1000px) {
+        font-size: 35px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 25px;
+    }
 `;
 
 export const List = styled.ul`
@@ -41,6 +49,14 @@ export const Picture = styled.img`
     height: auto;
     border: 3px solid black;
     cursor: pointer;
+
+    @media (max-width: 1000px) {
+        max-width: 130px;
+    }
+
+    @media (max-width: 500px) {
+        max-width: 100px;
+    }
 `;
 
 export const Item = styled.li`
