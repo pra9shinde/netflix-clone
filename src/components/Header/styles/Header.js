@@ -46,6 +46,10 @@ export const Logo = styled.img`
     @media (max-width: 600px) {
         width: 150px;
     }
+    
+     @media (max-width: 450px) {
+        width: 100px;
+    }
 `;
 
 export const ButtonLink = styled(RouterLink)`
