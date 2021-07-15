@@ -25,7 +25,16 @@ export default function Card({ children, ...restProps }) {
 
     return (
         <FeatureContext.Provider value={{ showfeature, setShowFeature, itemFeature, setItemFeature }}>
-            <Container {...restProps}>{children}</Container>
+            <Container {...restProps}>
+                {children}
+                <div className='scrollRight'>
+                    <div className='arrows'>
+                        <span />
+                        <span />
+                        <span />
+                    </div>
+                </div>
+            </Container>
         </FeatureContext.Provider>
     );
 }
